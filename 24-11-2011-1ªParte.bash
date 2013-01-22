@@ -2,7 +2,7 @@
 if [[ "$#" < 1 ]]; then
 	IFS=','
 	aux=(`grep "^users:" /etc/group | awk 'BEGIN {FS=":"}{print $4}'`)
-	set -- $aux
+	set -- ${aux[@]}
 fi
 users=($@)
 unset IFS
